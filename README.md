@@ -78,19 +78,15 @@ La tienda solo funciona durante el recreo, por lo que el sistema debe ser rápid
 | **Venta**      | productos, total                            | calcular total, agregar producto, mostrar venta          |
 | **Tarjeta**    | saldo                                       | recargar, descontar, consultar saldo                     |
 | **Tienda**     | inventario, estudiantes, ventas diarias     | agregar dulce, buscar dulce, registrar venta, calcular ganancias diarias, mostrar dulces populares, verificar stock bajo |
----
-## Diagrama de Clases
 
-```plaintext
+# Diagrama de Clases para Tienda de Dulces (Versión Final)
+
+```mermaid
 classDiagram
-    Tienda "1" --> "*" Dulce : tiene varios
-    Tienda "1" --> "*" Estudiante : tiene varios
-    Tienda "1" --> "*" Venta : tiene varias
+  Tienda "1" --> "*" Dulce : tiene
+  Tienda "1" --> "*" Venta : registra
 
-    Estudiante "1" --> "1" Tarjeta : tiene una
-    Estudiante "1" --> "*" Venta : asociada a varias
+  Estudiante "1" --> "1" Tarjeta : tiene
+  Estudiante "*" --> "*" Venta : paga
 
-    Venta "1" --> "*" Dulce : contiene varios
-    Venta "1" --> "1" Estudiante : asociada a un estudiante
-
-    Dulce "1" --> "*" Venta : se incluye en varias
+  Venta "1" --> "*" Dulce : contiene
