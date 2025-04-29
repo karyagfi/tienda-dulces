@@ -8,13 +8,13 @@ class Venta:
   def calcular_total(self):
     total = 0
     for nombre, precio, cantidad in self.productos:
-        total += precio * cantidad
+      total += precio * cantidad
     return total
 
   def mostrar_venta(self):
     for producto in self.productos:
       nombre, precio, cantidad = producto
       print(f"Producto: {nombre}")
-      print(f"  Cantidad: {cantidad} | Precio por unidad: ${precio}")
+      print(f"Cantidad: {cantidad} | Precio por unidad: ${precio}")
 
     print(f"Total: {self.calcular_total()}")

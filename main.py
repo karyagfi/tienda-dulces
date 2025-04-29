@@ -1,6 +1,5 @@
 from tienda.dulce import Dulce
 from tienda.estudiante import Estudiante
-from tienda.venta import Venta
 from tienda.tienda import Tienda
 from tienda.tarjeta import Tarjeta
 
@@ -20,10 +19,10 @@ print("Inventario actual:")
 tienda.mostrar_inventario()
 
 dulce = tienda.buscar_dulce("Chocolates")
-print(tienda.registrar_venta(estudiante1, dulce, 13))
+print(tienda.registrar_venta(estudiante1, dulce, 10))
 
 dulce = tienda.buscar_dulce("Gomitas")
-print(tienda.registrar_venta(estudiante2, dulce, 23))
+print(tienda.registrar_venta(estudiante2, dulce, 3))
 
 print("\nInventario después de la compra:")
 tienda.mostrar_inventario()
@@ -32,3 +31,7 @@ print(f"\nGanancias diarias: ${tienda.calcular_ganancias_diarias()}")
 
 print("\nDulces con stock bajo:")
 print(tienda.verificar_stock_bajo())
+
+estudiante1.tarjeta.recargar(400)
+print(estudiante1.tarjeta.consultar_saldo())
+print(estudiante2.tarjeta.consultar_saldo())

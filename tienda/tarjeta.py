@@ -5,6 +5,7 @@ class Tarjeta:
   def recargar(self, cantidad):
     self.saldo += cantidad
     print(f"Saldo recargado. Nuevo saldo: {self.saldo}")
+    return
 
   def descontar(self, cantidad):
     if self.saldo >= cantidad:
